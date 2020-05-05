@@ -1,0 +1,23 @@
+{
+  "name": "kitchen",
+  "version": "1.0.0",
+  "description": "an online cookbook",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianRigii/Kitchen.git"
+  },
+  "author": "John Brian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianRigii/Kitchen/issues"
+  },
+  "homepage": "https://github.com/BrianRigii/Kitchen#readme",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1"
+  }
+}
