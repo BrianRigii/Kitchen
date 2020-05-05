@@ -5,8 +5,9 @@ var navRoutes = require("./routes/nav");
 var port =8080
 
 
-//set ejs
+//set 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 //routes
 app.use(navRoutes);

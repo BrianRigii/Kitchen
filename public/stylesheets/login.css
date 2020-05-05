@@ -1,0 +1,9 @@
+.logimg{
+    background-image: url("/images/login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.page{
+    padding: 100vh;
+}
