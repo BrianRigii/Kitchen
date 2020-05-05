@@ -1,9 +1,34 @@
+
+
 .logimg{
     background-image: url("/images/login.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 }
-.page{
-    padding: 100vh;
+.form{
+    text-align: center;
+}
+.form-check {
+    text-align: left;
+}
+form input{
+    border: none;
+    border-bottom: 1px solid red;
+    background: none;
+    width: 100%;
+    outline: none;
+    margin: auto;
+    
+}
+
+@media(max-width:600px){
+    .logimg{
+        height: 30vh;
+        
+    }
+} 
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+    background-color: red !important;
+    border: none;
 }
