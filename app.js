@@ -4,6 +4,9 @@ var ejs = require ("ejs");
 var navRoutes = require("./routes/nav");
 var port =5050
 var mongoose = require("mongoose");
+var User = require("./models/user")
+var passport = require("passport");
+var LocalStrategy = require("passport-local")
 
 mongoose.connect("mongodb://localhost/kitchen",(err,db)=>{
     if(err){
@@ -14,6 +17,17 @@ mongoose.connect("mongodb://localhost/kitchen",(err,db)=>{
     }
 })
 
+// passport config
+app.use(require("express-session")({
+    secret:"learning this is fun",
+    saveUninitialized:false,
+    resave:false,
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(new LocalStrategy(User.authenticate()))
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
 
 //set 
 app.set("view engine", "ejs");
