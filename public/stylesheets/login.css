@@ -19,12 +19,23 @@ form input{
     width: 100%;
     outline: none;
     margin: auto;
+    padding: 2px
     
 }
 
+.formcont{
+    padding-top: 100px;
+}
+.brandin{
+    position:absolute;
+    top: 0%;
+}
+
+
+
 @media(max-width:600px){
     .logimg{
-        height: 30vh;
+        height: 30vh; 
         
     }
 } 
