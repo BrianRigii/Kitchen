@@ -37,4 +37,5 @@ form input{
 .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
     background-color: red !important;
     border: none;
+    
 }

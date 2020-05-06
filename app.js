@@ -1,12 +1,14 @@
 var express = require("express");
 var app = express();
 var ejs = require ("ejs");
-var navRoutes = require("./routes/nav");
+var navRoutes = require("./routes/nav")
+var authRoutes = require("./routes/auth");
 var port =5050
 var mongoose = require("mongoose");
 var User = require("./models/user")
 var passport = require("passport");
 var LocalStrategy = require("passport-local")
+var bodyParser = require("body-parser")
 
 mongoose.connect("mongodb://localhost/kitchen",(err,db)=>{
     if(err){
@@ -19,7 +21,7 @@ mongoose.connect("mongodb://localhost/kitchen",(err,db)=>{
 
 // passport config
 app.use(require("express-session")({
-    secret:"learning this is fun",
+    secret:"Wierdddddddasmskmkmkmkmkmkmkmk",
     saveUninitialized:false,
     resave:false,
 }))
@@ -32,9 +34,11 @@ passport.deserializeUser(User.deserializeUser())
 //set 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended:true}))
 
 //routes
 app.use(navRoutes);
+app.use(authRoutes)
 
 
 app.listen(port,()=>{
