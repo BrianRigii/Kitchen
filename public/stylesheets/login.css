@@ -9,9 +9,7 @@
 .form{
     text-align: center;
 }
-.form-check {
-    text-align: left;
-}
+
 form input{
     border: none;
     border-bottom: 1px solid red;
@@ -21,6 +19,9 @@ form input{
     margin: auto;
     padding: 2px
     
+}
+.buttonH{
+    margin-bottom: 10px;
 }
 
 
@@ -37,5 +38,8 @@ form input{
 .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
     background-color: red !important;
     border: none;
+    padding-left: 3.1rem;
+    padding-right: 3.1rem;
+    
     
 }
