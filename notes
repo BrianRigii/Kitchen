@@ -1,0 +1,7 @@
+<div class="container-fluid">
+        <div class="svg">
+            <div style="height: 200px; " ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.82,90.28 C119.89,239.30 323.98,12.33 508.37,152.45 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: rgb(190, 5, 5);"></path></svg>
+            <h1>Did it work</h1>
+            </div>   
+        </div>
+    </div>
