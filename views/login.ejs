@@ -32,7 +32,7 @@
                   <input
                     type="text"
                     name="username"
-                    id="username"
+                    autocomplete="off"
                     placeholder="User Name"
                   />
                 </div>
@@ -40,7 +40,7 @@
                   <input
                     type="email"
                     name="email"
-                    id="E-mail"
+                    autocomplete="email"
                     placeholder="E-mail"
                   />
                 </div>
@@ -48,7 +48,7 @@
                   <input
                     type="password"
                     name="password"
-                    id="password"
+                    autocomplete="off"
                     placeholder="Password"
                   />
                 </div>
@@ -56,8 +56,8 @@
                   <input
                     type="password"
                     name="cpassword"
-                    id="cpassword"
                     placeholder=" Confirm Password"
+                    autocomplete="off"
                   />
                 </div>
                 =
@@ -83,9 +83,9 @@
             <div class="container">
               <h3 class="text-center">Essies Kitchen</h3>
               <h4 class="mt-5">Login</h4>
-              <form action="/signUP" method="POST" class="form mt-mb-5 mt-sm-4">
+              <form action="/login" method="POST" class="form mt-mb-5 mt-sm-4">
                 <div class="form-group">
-                  <input type="text" name="username" placeholder="User Name" />
+                  <input type="text" name="username" placeholder="User Name" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
@@ -93,12 +93,13 @@
                     type="password"
                     name="password"
                     placeholder="Password"
+                    autocomplete="off"
                   />
                 </div>
 
                 <div class="buttonH">
                   <button class="btn btn-danger active mg-b-10">
-                    Create Profile
+                    &nbsp; Sign In &nbsp;
                   </button>
                 </div>
                 <div class="buttonG">

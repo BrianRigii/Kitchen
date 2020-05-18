@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-var User = require("../models/user")
 var getREC= require("../js/api")
 
 router.get("/",(req,res)=>{
@@ -8,8 +7,8 @@ router.get("/",(req,res)=>{
 })
 
 router.get("/index",(req,res)=>{
-    getREC()
-    res.render("index",{user :User})
+    // getREC()
+    res.render("index",{currentUser :req.user})
 })
 
 

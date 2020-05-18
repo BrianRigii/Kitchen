@@ -8,18 +8,30 @@ router.post("/signUP",(req,res)=>{
     User.register( userInfo, req.body.password ,(err,user)=>{
         if(err){
             console.log(`error: creating user acc ${err}`)
+            res.redirect("/")
         }
         {
-           passport.authenticate("local"),(req,res,function(){
-               
-           })
-           res.redirect("/index")
-           
-
-           
+            console.log("authenticating")
+            passport.authenticate("local")(req,res,function(){
+            res.redirect("/index")
+           })  
         }
 
     })
 })
+
+router.post("/login",passport.authenticate("local",{
+    successRedirect:"/index",
+    failureRedirect:"/"
+}))
+
+
+router.get("/logout",(req,res)=>{
+    req.logOut()
+    console.log("logging out")
+    res.redirect("/")
+    
+})
+
 
 module.exports =router
