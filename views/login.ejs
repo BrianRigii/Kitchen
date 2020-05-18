@@ -11,13 +11,19 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/login.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../jquery/registration.js"></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4 col-sm-12 logimg"></div>
         <div class="col-md-6 col-sm-12 ml-md-5">
-          <div class="signUp">
+          <div class="signUp form-sign">
             <div class="container">
               <h3 class="text-center">Essies Kitchen</h3>
               <h4 class="mt-5">Sign Up</h4>
@@ -54,7 +60,7 @@
                     placeholder=" Confirm Password"
                   />
                 </div>
-               =
+                =
 
                 <div class="buttonH">
                   <button class="btn btn-danger active mg-b-10">
@@ -69,7 +75,41 @@
                 </div>
               </form>
               <p class="text-muted text-center mt-4">
-                already have an account, <a href="#">Login?</a>
+                already have an account, <a href="#" id="login">Login?</a>
+              </p>
+            </div>
+          </div>
+          <div class="form-log hide">
+            <div class="container">
+              <h3 class="text-center">Essies Kitchen</h3>
+              <h4 class="mt-5">Login</h4>
+              <form action="/signUP" method="POST" class="form mt-mb-5 mt-sm-4">
+                <div class="form-group">
+                  <input type="text" name="username" placeholder="User Name" />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <div class="buttonH">
+                  <button class="btn btn-danger active mg-b-10">
+                    Create Profile
+                  </button>
+                </div>
+                <div class="buttonG">
+                  <a class="btn btn-outline-dark" href="/oauth">
+                    <img src="/images/Gicon.png" alt="" height="22px" /> login
+                    with Google &nbsp;
+                  </a>
+                </div>
+              </form>
+              <p class="text-muted text-center mt-4">
+                Dont have an account, <a href="#" id="Sign">Sign Up?</a>
               </p>
             </div>
           </div>
