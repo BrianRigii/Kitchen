@@ -43,6 +43,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(navRoutes);
 app.use(authRoutes);
 
+// app.use(function(req,res,next){
+//   res.locals.currentUser = req.user
+//   next()
+// })
+
 app.listen(port, () => {
   console.log(`server statred on port :${port}...`);
 });
