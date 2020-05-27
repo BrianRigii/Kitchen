@@ -1,4 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Open+Sans+Condensed:wght@300&display=swap');
+
+
 .red{
     background-color: #d80e0e;
   
 }
+body{
+    background-color: #EEEEEE;
+}
+
+.landing{
+    background-color: #F74140;
+    height: 100vh;
+    
+}
+
+.space-me{
+    margin-top: 20vh;
+}
+.bg{
+    padding: 0%;
+}
+
+.landtxt{
+    color: seashell;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 70px;
+}
+
+.search-box{
+    position: absolute;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 20px;
+    border-top: none;
+    margin-top: 10px;
+}
+
+/* font-family: 'Caveat', cursive;
+font-family: 'Open Sans Condensed', sans-serif; */

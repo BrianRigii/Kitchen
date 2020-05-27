@@ -8,17 +8,36 @@ router.get("/",(req,res)=>{
 })
 
 router.get("/index",(req,res)=>{
-    fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+    fetch("https://www.themealdb.com/api/json/v1/1/random.php")
     .then(data => data.json())
     .then(recipe => {
         res.render("index",{currentUser : req.user , Recipe : recipe})
 
     })
-    .catch(error=>console.log("error"))
+    .catch(error=>console.log("error occured :" +error))
     
    
     
     
+})
+
+router.get("/index/:cartegory",(req,res)=>{
+    var cartegory = req.params.cartegory
+    console.log(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cartegory}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cartegory}`)
+    .then(data => data.json())
+    .then(menu =>{
+        res.render("menulist", {Menu :menu})
+    })
+})
+
+router.get("/index/cook/:id",(req,res)=>{
+    var mealId = req.params.id
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+        .then(data => data.json())
+        .then(mealdata =>{
+            res.render("mealinfo",{mealdata : mealdata})
+        })
 })
 
 
