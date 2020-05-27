@@ -60,6 +60,11 @@
           </div>
           <div class="card-body">
             <h5 class="card-title"><%=Recipe.meals[0].strMeal%></h5>
+            <a href="/save/<%=Recipe.meals[0].idMeal%>/<%=Recipe.meals[0].strMeal%>/<%=currentUser._id%>">
+              <img src="/svg/pin.svg" alt="" class="float-left">
+            </a>
+            
+            <a href="/index/cook/<%=Recipe.meals[0].idMeal%>"> start coooking</a>
           </div>
         </div>
       </div>

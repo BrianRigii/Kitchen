@@ -3,9 +3,11 @@ var app = express();
 var ejs = require("ejs");
 var navRoutes = require("./routes/nav");
 var authRoutes = require("./routes/auth");
+var logicRoutes = require("./routes/logic")
 var port = 5050;
 var mongoose = require("mongoose");
 var User = require("./models/user");
+var savedMeals = require("./models/savedMeals")
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var bodyParser = require("body-parser");
@@ -42,6 +44,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //routes
 app.use(navRoutes);
 app.use(authRoutes);
+app.use(logicRoutes);
 
 // app.use(function(req,res,next){
 //   res.locals.currentUser = req.user

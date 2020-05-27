@@ -12,6 +12,7 @@ router.get("/index",(req,res)=>{
     .then(data => data.json())
     .then(recipe => {
         res.render("index",{currentUser : req.user , Recipe : recipe})
+        console.log(req.user)
 
     })
     .catch(error=>console.log("error occured :" +error))

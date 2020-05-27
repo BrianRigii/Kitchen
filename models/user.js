@@ -5,7 +5,13 @@ var userSchema = new mongoose.Schema(
     {
         username : String,
         email: String,
-        password:String
+        password:String,
+        savedMeal:[{
+            type :mongoose.Schema.Types.ObjectId,
+            ref: "savedMeals"
+        }]
+            
+        
     }
 )
 userSchema.plugin(passportLocalMongoose)
