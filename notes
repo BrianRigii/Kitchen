@@ -5,3 +5,7 @@
             </div>   
         </div>
     </div>
+    <%=Recipe.meals[0].strMealThumb%>
+    <%=Recipe.meals[0].strMeal%>
+    "/save/<%=Recipe.meals[0].idMeal%>/<%=Recipe.meals[0].strMeal%>/<%=currentUser._id%>
+    /index/cook/<%=Recipe.meals[0].idMeal%>

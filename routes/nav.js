@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var fetch = require("node-fetch")
-var  mealdb = {} ;
+var User = require("../models/user")
 
 router.get("/",(req,res)=>{
     res.render("login")
@@ -16,10 +16,7 @@ router.get("/index",(req,res)=>{
 
     })
     .catch(error=>console.log("error occured :" +error))
-    
-   
-    
-    
+     
 })
 
 router.get("/index/:cartegory",(req,res)=>{
@@ -42,6 +39,19 @@ router.get("/index/cook/:id",(req,res)=>{
 })
 
 
+router.get("/index/user/robber",(req,res)=>{
+    currentUser =req.user
+    User.findById(currentUser._id).populate("savedMeal").exec((err,savedMeals)=>{
+        if(err){
+            console.log(`error occured ${err}`)
+        }
+        else{
+            console.log(`hizi ndio ${savedMeals}`)
+            res.render("userpage",{meals:savedMeals})
+            
+        }
+    })
+})
 
 
 

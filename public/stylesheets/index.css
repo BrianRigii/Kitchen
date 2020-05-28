@@ -29,12 +29,37 @@ body{
 }
 
 .search-box{
-    position: absolute;
-    left:50%;
-    transform:translate(-50%,-50%);
     border-radius: 20px;
-    border-top: none;
-    margin-top: 10px;
+    border:2px solid rgba(255,255,255,.5);
+    width: 20vh;
+    background: none;
+    outline: none;
+    margin-left: auto;
+}
+
+.label h3{
+    display: inline;
+}
+.label span{
+    float: right;
+}
+
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+    background-color: red !important;
+    border: none;   
+}
+.title{
+    font-family: 'Caveat', cursive; 
+
+}
+
+input{
+    color: lavenderblush;
+    padding-left: 5px;
+}
+::-webkit-input-placeholder{
+    padding-left: 5px;
+    color: lavenderblush;
 }
 
 /* font-family: 'Caveat', cursive;

@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var savedMeals = require("../models/savedMeals");
 var User = require("../models/user");
+var fetch =require("node-fetch")
+
 
 router.get("/save/:id/:name/:user", (req, res) => {
   var Id = req.params.id;
@@ -30,5 +32,18 @@ router.get("/save/:id/:name/:user", (req, res) => {
 
   res.send(`${Id} was found ${name} was saved`);
 });
+
+// search functionlity
+
+router.post("/find",(req,res)=>{
+  var search = req.body.search
+  fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+  .then(data => data.json())
+  .then(foundMeals =>{
+    // console.log(foundMeals)
+    res.render("foundmeals", {foundMeals:foundMeals})
+  })
+  
+})
 
 module.exports = router;
