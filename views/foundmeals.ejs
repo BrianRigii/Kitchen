@@ -13,12 +13,12 @@
   </head>
   <body>
       <%foundMeals.meals.forEach((meal)=>{%>
-        <div class="card">
-            <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" width="50vh">
+        <div class="card " style="width: 18rem;">
+            <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" >
             <div class="card-body">
                 <h5 class="card-title"><%= meal.strMeal%></h5>
-                <h6>cartecgory <span><%= meal.strMeal%></span></h6>
-                <a href="/index/cook/<%=meal.idMeal%>"></a>
+                <h6>cartegory <span><%= meal.strCategory%></span></h6>
+                <a href="/index/cook/<%=meal.idMeal%>" class="btn btn-danger"> cook</a>
             </div>
         </div>
       <%})%>

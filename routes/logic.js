@@ -40,7 +40,7 @@ router.post("/find",(req,res)=>{
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
   .then(data => data.json())
   .then(foundMeals =>{
-    // console.log(foundMeals)
+    console.log(foundMeals.meals.length)
     res.render("foundmeals", {foundMeals:foundMeals})
   })
   
