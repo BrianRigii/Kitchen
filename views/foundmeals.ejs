@@ -12,17 +12,17 @@
     />
   </head>
   <body>
-      <%foundMeals.meals.forEach((meal)=>{%>
-        <div class="card " style="width: 18rem;">
-            <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" >
-            <div class="card-body">
-                <h5 class="card-title"><%= meal.strMeal%></h5>
-                <h6>cartegory <span><%= meal.strCategory%></span></h6>
-                <a href="/index/cook/<%=meal.idMeal%>" class="btn btn-danger"> cook</a>
-            </div>
-        </div>
-      <%})%>
-      
+    <%foundMeals.meals.forEach((meal)=>{%>
+    <div class="card" style="width: 18rem;">
+      <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title"><%= meal.strMeal%></h5>
+        <h6>cartegory <span><%= meal.strCategory%></span></h6>
+        <a href="/index/cook/<%=meal.idMeal%>" class="btn btn-danger"> cook</a>
+      </div>
+    </div>
+    <%})%>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
