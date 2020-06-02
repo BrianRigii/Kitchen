@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Open+Sans+Condensed:wght@300&display=swap');
+.title{
+    font-family: 'Caveat', cursive; 
+    color: red;
+}
+
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+    background-color: red !important;
+    border: none;   
+}

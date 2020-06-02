@@ -9,3 +9,42 @@
     <%=Recipe.meals[0].strMeal%>
     "/save/<%=Recipe.meals[0].idMeal%>/<%=Recipe.meals[0].strMeal%>/<%=currentUser._id%>
     /index/cook/<%=Recipe.meals[0].idMeal%>
+
+
+
+    foundmeals 
+
+
+    <div class="container">
+      <%foundMeals.meals.forEach((meal)=>{%>
+        <div class="card mt-2" style="width: 18rem;">
+          <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title"><%= meal.strMeal%></h5>
+            <h6>cartegory <span><%= meal.strCategory%></span></h6>
+            <a href="/index/cook/<%=meal.idMeal%>" class="btn btn-danger"> cook</a>
+          </div>
+        </div>
+        <%})%>
+    </div>
+
+    ###################################
+
+    mealInfo
+      <div class="container-fluid">
+        <img src="<%=mealdata.meals[0].strMealThumb%>" alt="" class="img-fluid">
+      </div>
+      
+    <h3><%=mealdata.meals[0].strMeal%></h3>
+
+    <% for(key in mealdata.meals[0]){ if(key.indexOf("strIngredient")==0){ %>
+        <% if( mealdata.meals[0][key] != "" && mealdata.meals[0][key] != null){ %>
+        <ul  style="list-style-type:none;">
+        <li class="list-group-item">-<%= mealdata.meals[0] [key]%></li>
+        </ul>
+        <%}%>
+         
+    <% } %> 
+    <% } %>
+
+    <p><%=mealdata.meals[0].strInstructions%></p>

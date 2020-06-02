@@ -10,25 +10,38 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/stylesheets/mealinfo.css">
   </head>
   <body>
-      <div class="container-fluid">
-        <img src="<%=mealdata.meals[0].strMealThumb%>" alt="" class="img-fluid">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <img
+            src="<%=mealdata.meals[0].strMealThumb%>"
+            alt=""
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="card-title title"><%=mealdata.meals[0].strMeal%></h1>
+              <p class="ing-title">ingredients</p>
+              <% for(key in mealdata.meals[0]){
+              if(key.indexOf("strIngredient")==0){ %> <% if(
+              mealdata.meals[0][key] != "" && mealdata.meals[0][key] != null){
+              %>
+
+              <ul style="list-style-type: none;">
+                <li>-<%= mealdata.meals[0] [key]%></li>
+              </ul>
+              <%}%> <% } %> <% } %>
+              <a href="#" class="btn btn-danger btn-block">Start Cooking</a>
+            </div>
+          </div>
+        </div>
       </div>
-      
-    <h3><%=mealdata.meals[0].strMeal%></h3>
-
-    <% for(key in mealdata.meals[0]){ if(key.indexOf("strIngredient")==0){ %>
-        <% if( mealdata.meals[0][key] != "" && mealdata.meals[0][key] != null){ %>
-        <ul  style="list-style-type:none;">
-        <li>-<%= mealdata.meals[0] [key]%></li>
-        </ul>
-        <%}%>
-         
-    <% } %> 
-    <% } %>
-
-    <p><%=mealdata.meals[0].strInstructions%></p>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

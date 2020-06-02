@@ -10,18 +10,27 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/stylesheets/foundmeals.css">
   </head>
-  <body>
-    <%foundMeals.meals.forEach((meal)=>{%>
-    <div class="card" style="width: 18rem;">
-      <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" />
-      <div class="card-body">
-        <h5 class="card-title"><%= meal.strMeal%></h5>
-        <h6>cartegory <span><%= meal.strCategory%></span></h6>
-        <a href="/index/cook/<%=meal.idMeal%>" class="btn btn-danger"> cook</a>
+  <body style="background-color: #F8F9FA;">
+    <div class="container">
+      <div class="row">
+        <%foundMeals.meals.forEach((meal)=>{%>
+        <div class="col-md-4">
+          <div class="card mt-4">
+            <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h3 class="card-title title"><%= meal.strMeal%></h3>
+              <h6>cartegory <span><%= meal.strCategory%></span></h6>
+              <a href="/index/cook/<%=meal.idMeal%>" class="btn btn-danger">
+                cook</a
+              >
+            </div>
+          </div>
+        </div>
+        <%})%>
       </div>
     </div>
-    <%})%>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

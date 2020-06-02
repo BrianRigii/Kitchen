@@ -19,7 +19,7 @@ router.get("/index",(req,res)=>{
      
 })
 
-router.get("/index/:cartegory",(req,res)=>{
+router.get("/index/find/:cartegory",(req,res)=>{
     var cartegory = req.params.cartegory
     console.log(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cartegory}`)
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cartegory}`)
@@ -39,7 +39,7 @@ router.get("/index/cook/:id",(req,res)=>{
 })
 
 
-router.get("/index/user/robber",(req,res)=>{
+router.get("/index/user",(req,res)=>{
     currentUser =req.user
     User.findById(currentUser._id).populate("savedMeal").exec((err,savedMeals)=>{
         if(err){
