@@ -11,7 +11,7 @@ router.get("/index",(req,res)=>{
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
     .then(data => data.json())
     .then(recipe => {
-        res.render("index",{currentUser : req.user , Recipe : recipe})
+        res.render("index",{ Recipe : recipe})
         console.log(req.user)
 
     })
@@ -52,24 +52,11 @@ router.get("/index/user",(req,res)=>{
             console.log(`error occured ${err}`)
         }
         else{
-            console.log(`hizi ndio ${savedMeals}`)
             res.render("userpage",{meals:savedMeals})
             
         }
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

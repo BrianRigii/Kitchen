@@ -34,6 +34,11 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req,res,next){
+  res.locals.currentUser = req.user;
+  console.log(res.locals.currentUser )
+  next();
+})
 
 
 //set
@@ -46,10 +51,6 @@ app.use(navRoutes);
 app.use(authRoutes);
 app.use(logicRoutes);
 
-// app.use(function(req,res,next){
-//   res.locals.currentUser = req.user
-//   next()
-// })
 
 app.listen(port, () => {
   console.log(`server statred on port :${port}...`);

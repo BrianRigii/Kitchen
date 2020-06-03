@@ -10,22 +10,38 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/stylesheets/userpage.css">
   </head>
   <body>
-    <%=currentUser.username%>
-
-    <h5>saved meals</h5>
-    <%meals.savedMeal.forEach((meal)=>{%>
-    <div class="card mx-2 mt-2">
-      <div class="card-body">
-        <h5 class="card-title"><%=meal.mealName%></h5>
-        <a href="/index/cook/<%=meal.mealId%>" class="btn btn-outline-danger">
-          cook</a
-        >
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto">
+          <img src="/svg/hat.svg" width="128" />
+          <p class="mx-auto"><%=currentUser.username%></p>
+          <p class="text-muted"><%=currentUser.email%></p>
+        </div>
       </div>
     </div>
 
-    <% })%>
+    <h5 class="title">pinned-meals</h5>
+    <div class="container">
+      <div class="row">
+        <%meals.savedMeal.forEach((meal)=>{%>
+          <div class="col-md-4">
+            <div class="card mx-2 mt-2">
+              <div class="card-body">
+                <h2 class="card-title mealtitle"><%=meal.mealName%></h2>
+                <a href="/index/cook/<%=meal.mealId%>" class="btn btn-danger">
+                  &nbsp;&nbsp;cook&nbsp;&nbsp;</a
+                >
+              </div>
+            </div>
+          </div>
+      
+          <% })%>
+      </div>
+    </div>
+   
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
