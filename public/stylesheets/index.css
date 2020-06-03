@@ -62,5 +62,11 @@ input{
     color: lavenderblush;
 }
 
+.heading{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bolder;
+
+}
+
 /* font-family: 'Caveat', cursive;
 font-family: 'Open Sans Condensed', sans-serif; */

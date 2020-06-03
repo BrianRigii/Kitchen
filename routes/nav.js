@@ -18,6 +18,12 @@ router.get("/index",(req,res)=>{
     .catch(error=>console.log("error occured :" +error))
      
 })
+router.get("/index/cartegories",(req,res)=>{
+    res.render("cartegories")
+})
+
+
+
 
 router.get("/index/find/:cartegory",(req,res)=>{
     var cartegory = req.params.cartegory
