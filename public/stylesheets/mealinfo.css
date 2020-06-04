@@ -15,3 +15,23 @@
     text-decoration: underline;
     font-size: 35px;
 }
+
+.red{
+    background-color:#F74140;
+}
+.search-box{
+    border-radius: 20px;
+    border:2px solid rgba(255,255,255,.5);
+    width: 20vh;
+    background: none;
+    outline: none;
+    margin-left: auto;
+}
+input{
+    color: lavenderblush;
+    padding-left: 5px;
+}
+::-webkit-input-placeholder{
+    padding-left: 5px;
+    color: lavenderblush;
+}

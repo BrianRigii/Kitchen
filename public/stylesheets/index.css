@@ -36,6 +36,14 @@ body{
     outline: none;
     margin-left: auto;
 }
+input{
+    color: lavenderblush;
+    padding-left: 5px;
+}
+::-webkit-input-placeholder{
+    padding-left: 5px;
+    color: lavenderblush;
+}
 
 .label h3{
     display: inline;
@@ -53,14 +61,7 @@ body{
 
 }
 
-input{
-    color: lavenderblush;
-    padding-left: 5px;
-}
-::-webkit-input-placeholder{
-    padding-left: 5px;
-    color: lavenderblush;
-}
+
 
 .heading{
     font-family: 'Open Sans Condensed', sans-serif;
