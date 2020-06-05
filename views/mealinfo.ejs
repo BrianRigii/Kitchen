@@ -43,9 +43,7 @@
             >
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="index/user"
-              ><%=currentUser.username%></a
-            >
+            <a class="nav-link" href="/index/user"><%=currentUser.username%></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/logout">Log Out</a>
@@ -60,14 +58,26 @@
             src="<%=mealdata.meals[0].strMealThumb%>"
             alt=""
             class="img-fluid"
-            
           />
         </div>
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
               <h1 class="card-title title"><%=mealdata.meals[0].strMeal%></h1>
-              <p class="ing-title">ingredients</p>
+              <p class="ing-title">
+                ingredients
+                <span class="float-right">
+                  <a href="<%=mealdata.meals[0].strYoutube%>">
+                    <img
+                    src="/svg/tube.svg"
+                    alt="youtube"
+                    height="40px"
+                  />
+                  </a>
+                  
+              </span>
+              </p>
+
               <% for(key in mealdata.meals[0]){
               if(key.indexOf("strIngredient")==0){ %> <% if(
               mealdata.meals[0][key] != "" && mealdata.meals[0][key] != null){

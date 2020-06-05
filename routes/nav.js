@@ -19,7 +19,12 @@ router.get("/index",(req,res)=>{
      
 })
 router.get("/index/cartegories",(req,res)=>{
-    res.render("cartegories")
+    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+    .then(data => data.json())
+    .then(categories => {
+        res.render("cartegories",{foundCart:categories})
+    })
+    
 })
 
 
