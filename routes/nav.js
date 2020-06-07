@@ -36,7 +36,7 @@ router.get("/index/find/:cartegory",(req,res)=>{
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cartegory}`)
     .then(data => data.json())
     .then(menu =>{
-        res.render("menulist", {Menu :menu})
+        res.render("menulist", {Menu :menu, cartegory:cartegory})
     })
 })
 

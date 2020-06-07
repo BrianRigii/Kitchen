@@ -53,22 +53,26 @@
         </ul>
       </div>
     </nav>
-    <h5>Find some of our handpicked Recipes</h5>
+    <h2 class="ml-2 my-2 heading"><strong>Cook</strong>
+       the right way</h2>
    <div class="container">
      <div class="row">
        <% foundCart.categories.forEach((category)=>{%>
-        <div class="col-md-4">
+        <div class="col-md-4 px-0">
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title"><%=category.strCategory%></h3>
+              <h3 class="card-title title"><%=category.strCategory%> <span class="float-right fontspan">
+                <a href="/index/find/<%=category.strCategory%>" class="btn btn-danger">view recipes</a>
+              </span></h3>
               <p class="text-muted"></p>
-              <a href="/index/find/<%=category.strCategory%>" class="btn btn-danger">view recipes</a>
+             
             </div>
           </div>
         </div>
       <% })%>
      </div>
    </div>
+   <p class="text-center"><a href="#search-box">search</a></p>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

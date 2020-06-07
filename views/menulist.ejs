@@ -43,9 +43,7 @@
             >
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/index/user"
-              ><%=currentUser.username%></a
-            >
+            <a class="nav-link" href="/index/user"><%=currentUser.username%></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/logout">Log Out</a>
@@ -53,23 +51,36 @@
         </ul>
       </div>
     </nav>
-
+    <h2 class="mt-2 ml-2 heading">
+      <span><Strong><%=cartegory%></Strong></span> recipies
+    </h2>
     <div class="container-fluid">
-     <div class="row">
-      <%Menu.meals.forEach((meal)=>{%>
-        <div class="col-md-4">
-          <div class="card mt-2">
-            <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top img-fluid">
+      <div class="row">
+        <%Menu.meals.forEach((meal)=>{%>
+        <div class="col-md-4 px-0">
+          <div class="card mt-2 mx-md-2">
+            <img
+              src="<%=meal.strMealThumb%>"
+              alt=""
+              class="card-img-top img-fluid"
+            />
             <div class="card-body">
-              <p><%=meal.strMeal%></p>
-              <a href="/index/cook/<%= meal.idMeal%>"> start cooking </a>
+              <h4 class="card-title title">
+                <%=meal.strMeal%>
+                <span class="float-right"
+                  ><a href="/save/<%=meal.idMeal%>/<%=meal.strMeal%>/<%=currentUser._id%>">
+                    <img src="/svg/pin.svg" alt="" height="25px"
+                    /></a></span>
+              </h4>
+              <a href="/index/cook/<%= meal.idMeal%>" class="btn btn-danger">
+                &nbsp;&nbsp;cook&nbsp;&nbsp;
+              </a>
             </div>
           </div>
         </div>
-        
-     <% }) %>
-     </div>
-      
+
+        <% }) %>
+      </div>
     </div>
 
     <script

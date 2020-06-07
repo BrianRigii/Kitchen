@@ -13,17 +13,63 @@
     <link rel="stylesheet" href="/stylesheets/foundmeals.css" />
   </head>
   <body style="background-color: #f8f9fa;">
+    <nav class="navbar navbar-expand-lg navbar-dark red">
+      <a class="navbar-brand" href="/index"><strong>KITCHEN</strong></a>
+      <form action="/find" method="POST" class="ml-auto">
+        <input
+          type="search"
+          name="search"
+          id="search-box"
+          placeholder="search"
+          class="search-box"
+        />
+      </form>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index/cartegories"
+              >Cartegories <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/index/user"><%=currentUser.username%></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
       <div class="row">
         <%foundMeals.meals.forEach((meal)=>{%>
-        <div class="col-md-4">
-          <div class="card mt-4">
+        <div class="col-md-4 px-0">
+          <div class="card mt-2 mx-md-2">
             <img src="<%=meal.strMealThumb%>" alt="" class="card-img-top" />
             <div class="card-body">
-              <h3 class="card-title title"><%= meal.strMeal%></h3>
-              <h6>cartegory <span><%= meal.strCategory%></span></h6>
+              <h3 class="card-title title mb-0"><%= meal.strMeal%>
+              <span class="float-right">
+                <a href="/save/<%=meal.idMeal%>/<%=meal.strMeal%>/<%=currentUser._id%>">
+                  <img src="/svg/pin.svg" alt="" height="25px">
+                </a>
+              </span>
+            </h3>
+              <p class="text-muted cartegory">
+                Cartegory:<span><%= meal.strCategory%></span>
+              </p>
               <a href="/index/cook/<%=meal.idMeal%>" class="btn btn-danger">
-                cook</a
+                &nbsp;&nbsp;cook&nbsp;&nbsp;</a
               >
             </div>
           </div>

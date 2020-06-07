@@ -1,6 +1,5 @@
-body{
-    background-color: #EEEEEE;
-}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Open+Sans+Condensed:wght@300&display=swap');
+
 .red{
     background-color: #F74140;
 }
@@ -20,4 +19,20 @@ input{
 ::-webkit-input-placeholder{
     padding-left: 5px;
     color: lavenderblush;
+}
+
+.title{
+    font-family: 'Caveat', cursive; 
+
+}
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+    background-color: red !important;
+    border: none;   
+}
+
+.heading span{
+    text-decoration: underline;
+}
+.heading{
+    font-family: 'Open Sans Condensed', sans-serif;
 }

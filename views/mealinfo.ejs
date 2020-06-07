@@ -64,6 +64,7 @@
           <div class="card">
             <div class="card-body">
               <h1 class="card-title title"><%=mealdata.meals[0].strMeal%></h1>
+              <h6 class="card-subtitle text-muted"><%=mealdata.meals[0].strArea%> Cuisine</h6>
               <p class="ing-title">
                 ingredients
                 <span class="float-right">
@@ -84,7 +85,7 @@
               %>
 
               <ul style="list-style-type: none;">
-                <li>-<%= mealdata.meals[0] [key]%></li>
+                <li><input type="checkbox" name="" id="">   <%= mealdata.meals[0] [key]%></li>
               </ul>
               <%}%> <% } %> <% } %>
               <a href="#" class="btn btn-danger btn-block">Start Cooking</a>

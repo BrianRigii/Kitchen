@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Open+Sans+Condensed:wght@300&display=swap');
 .title{
     font-family: 'Caveat', cursive; 
-    color: red;
+    
 }
 
 .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
@@ -28,4 +28,11 @@ input{
 ::-webkit-input-placeholder{
     padding-left: 5px;
     color: lavenderblush;
+}
+.fontspan{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading{
+    font-family: 'Open Sans Condensed', sans-serif;
 }
