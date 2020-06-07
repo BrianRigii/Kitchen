@@ -11,6 +11,7 @@ var savedMeals = require("./models/savedMeals")
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var bodyParser = require("body-parser");
+var oauthSetup = require("./config/passportOuth")
 
 mongoose.connect("mongodb://localhost/kitchen", (err, db) => {
   if (err) {

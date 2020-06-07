@@ -6,6 +6,7 @@ var userSchema = new mongoose.Schema(
         username : String,
         email: String,
         password:String,
+        googleID : String,
         savedMeal:[{
             type :mongoose.Schema.Types.ObjectId,
             ref: "savedMeals"
@@ -15,5 +16,6 @@ var userSchema = new mongoose.Schema(
     }
 )
 userSchema.plugin(passportLocalMongoose)
+
 
 module.exports = mongoose.model("Users", userSchema)
