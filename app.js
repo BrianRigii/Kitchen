@@ -12,7 +12,7 @@ var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var bodyParser = require("body-parser");
 
-mongoose.connect("mongodb://localhost/kitchen", (err, db) => {
+mongoose.connect("mongodb://localhost/kitchen", { useNewUrlParser: true ,useUnifiedTopology: true } ,(err, db) => {
   if (err) {
     console.log(`error connecting to db ${err}`);
   } else {
@@ -52,5 +52,5 @@ app.use(logicRoutes);
 
 
 app.listen(port, () => {
-  console.log(`server statred on port :${port}...`);
+  console.log(`server started on port :${port}...`);
 });
