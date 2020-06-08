@@ -25,7 +25,10 @@ body{
 .landtxt{
     color: seashell;
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 70px;
+    font-size: 60px;
+}
+.text{
+    color:  rgba(255, 248, 244, 0.829);
 }
 
 .search-box{

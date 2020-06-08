@@ -27,6 +27,9 @@
     outline: none;
     margin-left: auto;
 }
+.hide{
+    display: none;
+}
 input{
     color: lavenderblush;
     padding-left: 5px;
@@ -34,4 +37,10 @@ input{
 ::-webkit-input-placeholder{
     padding-left: 5px;
     color: lavenderblush;
+}
+/* .card{
+    border: none;
+} */
+.card {
+    border: none
 }

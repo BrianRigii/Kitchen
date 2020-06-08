@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Open+Sans+Condensed:wght@300&display=swap');
 
 
 .logimg{
@@ -16,8 +17,13 @@ form input{
     background: none;
     width: 100%;
     outline: none;
-    margin: auto;
     padding: 2px
+    
+}
+form.checkbox input{
+    position: absolute;
+    margin-right: 100px;
+    
     
 }
 .buttonH{
@@ -27,8 +33,17 @@ form input{
 
 
 
+.title{
+    font-family: 'Open Sans Condensed', sans-serif;
+    kerning: 5px;
+    font-size: 40px;
+    font-weight: bold;
 
-
+}
+.heading{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 30px;
+}
 @media(max-width:600px){
     .logimg{
         height: 30vh; 
@@ -45,4 +60,9 @@ form input{
 }
 .hide{
     display: none;
+}
+
+.pads{
+   padding-left:68px;
+   padding-right:68px;
 }

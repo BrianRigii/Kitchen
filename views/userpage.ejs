@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Kitchen</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/stylesheets/userpage.css">
+    <link rel="stylesheet" href="/stylesheets/userpage.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark red">
@@ -43,9 +43,7 @@
             >
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="index/user"
-              ><%=currentUser.username%></a
-            >
+            <a class="nav-link" href="/index/user"><%=currentUser.username%></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/logout">Log Out</a>
@@ -53,12 +51,14 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="mx-auto">
+        <div class="col-6">
           <img src="/svg/hat.svg" width="128" />
-          <p class="mx-auto"><%=currentUser.username%></p>
-          <p class="text-muted"><%=currentUser.email%></p>
+        </div>
+        <div class="col-6">
+          <p class="mt-4 mb-0 fontsize"><%=currentUser.username%></p>
+          <p class="text-muted "><%=(currentUser.email) || "Google User"%></p>
         </div>
       </div>
     </div>
@@ -66,22 +66,27 @@
     <h5 class="title">pinned-meals</h5>
     <div class="container">
       <div class="row">
-        <%meals.savedMeal.forEach((meal)=>{%>
-          <div class="col-md-4">
-            <div class="card mx-2 mt-2">
-              <div class="card-body">
-                <h2 class="card-title mealtitle"><%=meal.mealName%></h2>
-                <a href="/index/cook/<%=meal.mealId%>" class="btn btn-danger">
-                  &nbsp;&nbsp;cook&nbsp;&nbsp;</a
-                >
-              </div>
+        <%if(meals.savedMeal.length == 0){%>
+        <p class="my-5 text-center">
+          you haven't saved anything yet <br />find meals you have saved here
+          after clicking on <img src="/svg/pin.svg" height="20px" />
+        </p>
+
+        <%} else{ %> <%meals.savedMeal.forEach((meal)=>{%>
+        <div class="col-md-4">
+          <div class="card mx-2 mt-2">
+            <div class="card-body">
+              <h2 class="card-title mealtitle"><%=meal.mealName%></h2>
+              <a href="/index/cook/<%=meal.mealId%>" class="btn btn-danger">
+                &nbsp;&nbsp;cook&nbsp;&nbsp;</a
+              >
             </div>
           </div>
-      
-          <% })%>
+        </div>
+
+        <% })%> <%}%>
       </div>
     </div>
-   
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

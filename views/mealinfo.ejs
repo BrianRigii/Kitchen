@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Kitchen</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -11,6 +11,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/mealinfo.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="/jquery/recipe.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark red">
@@ -60,8 +62,8 @@
             class="img-fluid"
           />
         </div>
-        <div class="col-md-6">
-          <div class="card">
+        <div class="col-md-6 ">
+          <div class="card " id="leing">
             <div class="card-body">
               <h1 class="card-title title"><%=mealdata.meals[0].strMeal%></h1>
               <h6 class="card-subtitle text-muted"><%=mealdata.meals[0].strArea%> Cuisine</h6>
@@ -88,9 +90,33 @@
                 <li><input type="checkbox" name="" id="">   <%= mealdata.meals[0] [key]%></li>
               </ul>
               <%}%> <% } %> <% } %>
-              <a href="#" class="btn btn-danger btn-block">Start Cooking</a>
+              <a href="#" id="cook" class="btn btn-danger btn-block ">Start Cooking</a>
             </div>
           </div>
+          <!-- hidden -->
+          <div class="card hide" id="recipe">
+            <div class="cardbody">
+              <h1 class="card-title title"><%=mealdata.meals[0].strMeal%></h1>
+              <h6 class="card-subtitle text-muted"><%=mealdata.meals[0].strArea%> Cuisine</h6>
+              <p class="ing-title">
+                Recipe
+                <span class="float-right">
+                  <a href="<%=mealdata.meals[0].strYoutube%>">
+                    <img
+                    src="/svg/tube.svg"
+                    alt="youtube"
+                    height="40px"
+                  />
+                  </a>
+                  
+              </span>
+              </p>
+              <p><%=mealdata.meals[0].strInstructions%></p>
+              <a href="#" id="ing" class="btn btn-danger btn-block">ingredients list</a>
+
+            </div>
+          </div>
+          <!-- hidden -->
         </div>
       </div>
     </div>

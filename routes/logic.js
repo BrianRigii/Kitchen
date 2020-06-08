@@ -30,7 +30,7 @@ router.get("/save/:id/:name/:user", (req, res) => {
 
 
 
-  res.send(`${Id} was found ${name} was saved`);
+  res.redirect("/index/user");
 });
 
 // search functionlity

@@ -11,6 +11,7 @@ var savedMeals = require("./models/savedMeals")
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var bodyParser = require("body-parser");
+var oauth = require("./config/passportOuth")
 
 mongoose.connect("mongodb://localhost/kitchen", { useNewUrlParser: true ,useUnifiedTopology: true } ,(err, db) => {
   if (err) {
