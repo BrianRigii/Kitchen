@@ -48,3 +48,23 @@
     <% } %>
 
     <p><%=mealdata.meals[0].strInstructions%></p>
+
+    ###########################################################################
+     function (accessToken, refreshToken, profile, done) {
+      User.findOne({ googleID: profile.id }, (err, user) => {
+        if (!user) {
+          new User({
+            username: profile.displayName,
+            email: profile.email,
+            googleID: profile.id,
+          }).save();
+          return done(null, user)
+        } else {
+          console.log(`welcome back ${user.username}`);
+          console.log(profile);
+          return done(null, false)
+        }
+      });
+    }
+  )
+);

@@ -38,13 +38,7 @@ router.get("/logout", (req, res) => {
 
 router.get("/oauth", passport.authenticate("google", { scope: ["profile"] }));
 
-// router.get(
-//   "/oauth/callback",
-//   passport.authenticate("google", {
-//     failureRedirect: "/login",
-//     successRedirect: "/index",
-//   })
-// );
+
 router.get('/oauth/callback', 
   passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
