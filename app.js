@@ -13,7 +13,7 @@ var LocalStrategy = require("passport-local");
 var bodyParser = require("body-parser");
 var oauth = require("./config/passportOuth")
 
-mongoose.connect("mongodb://localhost/kitchen", { useNewUrlParser: true ,useUnifiedTopology: true } ,(err, db) => {
+mongoose.connect( mongodburi||"mongodb://localhost/kitchen", { useNewUrlParser: true ,useUnifiedTopology: true } ,(err, db) => {
   if (err) {
     console.log(`error connecting to db ${err}`);
   } else {
@@ -52,6 +52,6 @@ app.use(authRoutes);
 app.use(logicRoutes);
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT ||port, () => {
   console.log(`server started on port :${port}...`);
 });
